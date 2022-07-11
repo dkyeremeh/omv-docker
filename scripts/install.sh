@@ -12,7 +12,7 @@ wget $OMV_INSTALL_SRC -O scripts/install_omv.sh
 sed -i "s/^systemd=.*/systemd='systemd'/g" scripts/install_omv.sh
 
 # Install omv
-bash scripts/install_omv.sh
+bash scripts/install_omv.sh -n
 
 # start-stop-daemon
 wget $START_STOP_SRC -O start-stop-daemon.c
