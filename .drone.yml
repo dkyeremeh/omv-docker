@@ -1,0 +1,14 @@
+---
+kind: pipeline
+type: docker
+name: build
+
+concurrency:
+  limit: 2
+
+steps:
+  - name: test
+    image: debian:bullseye
+    commands:
+      - ./build.sh
+      - docker push eldekyfin/omv
