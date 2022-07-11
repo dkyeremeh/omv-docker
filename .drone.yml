@@ -8,7 +8,7 @@ concurrency:
 
 steps:
   # - name: build & deploy
-  #   image: debian:bullseye
+  #   image: plugins/docker
   #   commands:
   #     - ./scripts/build.sh
   #     - docker push eldekyfin/omv
@@ -21,3 +21,4 @@ steps:
       password:
         from_secret: DOCKER_PASS
       repo: eldekyfin/omv
+      tags: latest,0.1,0.1.0
