@@ -7,12 +7,6 @@ concurrency:
   limit: 2
 
 steps:
-  # - name: build & deploy
-  #   image: plugins/docker
-  #   commands:
-  #     - ./scripts/build.sh
-  #     - docker push eldekyfin/omv
-
   - name: docker build & Publish
     image: plugins/docker
     settings:
@@ -21,4 +15,4 @@ steps:
       password:
         from_secret: DOCKER_PASS
       repo: eldekyfin/omv
-      tags: latest,0.1,0.1.0
+      tags: latest,0.1,0.1.1
