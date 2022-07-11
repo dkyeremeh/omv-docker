@@ -13,13 +13,14 @@ sed -i "s/^systemd=.*/systemd='systemd'/g" scripts/install_omv.sh
 
 # Install omv
 bash scripts/install_omv.sh -n
+apt install -y systemd
 
 # start-stop-daemon
 wget $START_STOP_SRC -O start-stop-daemon.c
 gcc start-stop-daemon.c -o start-stop-daemon
 mv start-stop-daemon /usr/bin/start-stop-daemon
 chmod +x /usr/bin/start-stop-daemon
-
 # fake systemd
 wget $FAKE_SYSTEMD_SRC -O /usr/bin/systemctl
 chmod +x /usr/bin/systemctl
+

@@ -15,4 +15,4 @@ steps:
       password:
         from_secret: DOCKER_PASS
       repo: eldekyfin/omv
-      tags: latest,0.1,0.1.2
+      tags: latest,0.1,0.1.3
