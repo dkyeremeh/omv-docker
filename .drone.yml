@@ -7,8 +7,16 @@ concurrency:
   limit: 2
 
 steps:
-  - name: build & deploy
-    image: debian:bullseye
-    commands:
-      - ./scripts/build.sh
-      - docker push eldekyfin/omv
+  # - name: build & deploy
+  #   image: debian:bullseye
+  #   commands:
+  #     - ./scripts/build.sh
+  #     - docker push eldekyfin/omv
+
+  - name: docker build & Publish
+    image: plugins/docker
+    settings:
+      username: ${DOCKER_USER}
+      password: ${DOCKER_PASS}
+      repo: eldekyfin/omv
+      tags: latest
