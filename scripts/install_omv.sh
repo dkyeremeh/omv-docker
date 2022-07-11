@@ -140,6 +140,9 @@ fi
 echo "Updating repos before installing..."
 apt-get --allow-releaseinfo-change update
 
+echo "Installing wget ..."
+apt-get install -y wget
+
 echo "Installing lsb_release..."
 apt-get --yes --no-install-recommends --reinstall install lsb-release
 
@@ -166,7 +169,7 @@ case ${codename} in
     smbOptions="${smbOptions}\nwrite cache size = 524288"
     ;;
   bullseye)
-    keys="0E98404D386FA1D9 A48449044AAD5C5D"
+    keys="0E98404D386FA1D9 A48449044AAD5C5D 7E7A6C592EF35D13 24863F0C716B980B"
     omvCodename="shaitan"
     version=6
     ;;
