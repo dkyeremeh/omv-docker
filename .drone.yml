@@ -16,7 +16,8 @@ steps:
   - name: docker build & Publish
     image: plugins/docker
     settings:
-      username: ${DOCKER_USER}
-      password: ${DOCKER_PASS}
+      username:
+        from_secret: DOCKER_USER
+      password:
+        from_secret: DOCKER_PASS
       repo: eldekyfin/omv
-      tags: latest
